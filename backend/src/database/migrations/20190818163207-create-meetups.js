@@ -23,12 +23,19 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      speaker_id: {
+      file_id: {
         type: Sequelize.INTEGER,
-        reference: { model: 'users', key: 'id' },
+        references: { model: 'files', key: 'id' },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-        allowNull: true,
+        onDelete: 'CASCADE',
+        allowNull: false,
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'users', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        allowNull: false,
       },
       canceled_at: {
         type: Sequelize.DATE,
