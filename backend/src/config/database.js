@@ -1,9 +1,9 @@
 module.exports = {
   dialect: 'postgres',
-  host: 'localhost',
-  username: 'meetapp',
-  password: 'meetapp',
-  database: 'meetappdb',
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
   port: '6544',
   define: {
     timestamps: true,
